@@ -1,0 +1,82 @@
+body {
+	color: black;
+	background: papayawhip;
+	font-family:arial, serif;
+	margin: 0;
+}
+
+h1 {
+	color: white;
+	background: peru;
+	font-family:arial, serif ;
+	text-align: center;
+	margin: 0;
+	padding: 30px 0 15px 0;
+}
+
+.subtitle {
+	color: white;
+	text-align: center;
+	margin: 0;
+	font-size: 1.2em;
+	background: peru;
+}
+
+.navbar {
+	background: olivedrab;
+	list-style: none;
+	display: flex;
+	top: 0em;
+	left: 0em;
+	width: auto;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar > li {
+	flex: 1;
+	text-align: center;
+	position: relative;
+}
+
+.navbar > li:hover {
+	background-color: darkblue;
+	color: white;
+}
+
+.dropdown {
+	position: relative;
+}
+
+.menu {
+	list-style: none;
+	display: none;
+	position: absolute;
+	background-color: pink;
+	top: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	color: black;
+}
+
+.dropdown:hover .menu {
+	display: block;
+}
+
+@media all {
+	body{
+		font-size: 1em;
+	}
+}
+
+@media print {
+	body {
+		background-color: white;
+		color: black;
+	}
+	.navbar, .menu{
+		display: none;
+	}
+}
