@@ -1,0 +1,147 @@
+/* MAIN CONTAINER */
+.main-container {
+    width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 30%;
+    background: lightsalmon;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bottomline{
+    border-bottom: 1px solid black;
+
+}
+
+.photo-panel img {
+    width: 100%;
+    display: block;
+}
+
+.text-content {
+    padding: 20px;
+}
+
+.name {
+    margin-bottom: 0;
+}
+
+.identity {
+    margin-top: 5px;
+}
+
+.school-logo {
+    width: 200px;
+    margin-top: 20px;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    width: 70%;
+    padding: 20px 30px;
+    background: oldlace;
+}
+
+/* SECTION TITLES */
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 22px;
+    border-bottom: 1px solid saddlebrown;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* EDUCATION */
+.edu {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.year {
+    width: 120px;
+    font-weight: bold;
+}
+
+.description {
+    color: black;
+}
+
+/* SKILL TAGS */
+.tags .tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background: mistyrose;
+    color: sienna;
+    border-radius: 10px;
+    margin-right: 8px;
+}
+
+/* HOMEWORK & LAB */
+.hw-and-lab-container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    background: mistyrose;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card a {
+    text-decoration: none;
+    color: sienna;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* FAVORITE MUSIC */
+.music {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.music a {
+    text-decoration: none;
+    color: sienna;
+}
+
+.music a:hover {
+    text-decoration: underline;
+}
+
+.music-item img {
+    width: 60px;
+    height: 60px;
+}
+
+.music-item p {
+    margin-top: 8px;
+}
+
+.music-note {
+    margin-top: 15px;
+    color: black;
+}
