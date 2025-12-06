@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>114306023_JS1_Lab3</title>
+
+</head>
+<body>
+	<h1>114306023_Number Guessing Game</h1>
+
+    <!--  空的 div，用來放圖片 -->
+    <div id="result"></div>
+
+    <script>
+        //  產生隨機答案
+        var answer = Math.floor(Math.random() * 100) + 1;
+
+        //  猜數字範圍
+        var min = 1;
+        var max = 100;
+
+        //  次數
+        var chances = 7;
+
+        
+
+        //  game
+        while (chances > 0) {
+
+            var input = window.prompt(
+                "請輸入 " + min + " 到 " + max + " 之間的整數。\n" +
+                "你還有 " + chances + " 次機會。"
+            );
+
+            //  檢查輸入是否符合規則（=== 嚴格等於）
+            if (input === null || input.trim() === "" || isNaN(input)) {
+                alert("輸入錯誤，請輸入有效範圍內的數字！");
+                continue;
+            }
+
+            var guess = Number(input);
+
+            //  檢查是否在範圍內
+            if (guess < min || guess > max) {
+                alert("超出有效範圍，請輸入有效範圍內的數字！");
+                continue;
+            }
+
+            //  correct
+            if (guess === answer) {
+                alert("恭喜你答對了！正確答案是 " + answer + "！");
+                document.getElementById("result").innerHTML ='<img src="correct.jpg">';
+                break;
+            }
+
+            // wrong
+            chances--;
+
+            if (guess > answer) {
+                alert("太大了！");
+                max = guess - 1;
+            } else {
+                alert("太小了！");
+                min = guess + 1;
+            }
+
+            // 次數歸零 → 遊戲結束
+            if (chances === 0) {
+                alert("Game over！正確答案是" + answer + "！");
+                document.getElementById("result").innerHTML ='<img src="wrong.jpg">';
+            }
+        }
+    </script>
+
+</body>
+</html>
