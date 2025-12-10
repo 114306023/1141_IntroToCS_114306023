@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>114306023_JS1_HW7.html</title>
+
+</head>
+<body>
+	<h1>114306023_HW7_1A2B</h1>
+    Enter 4 unique numbers<input type="text" id="guessInput">
+    <button onclick="play()">Guess!</button>
+
+
+    <br><br>
+    Game Record:
+    <div id="record"></div>
+
+
+    <script>
+
+        let answer = generateAnswer();
+        let count = 0;
+
+        //設定答案
+        function generateAnswer() {
+            
+            let numbers = [0,1,2,3,4,5,6,7,8,9];
+            let result = [];
+
+            for (let i = 0; i < 4; i++) {
+                let index = Math.floor(Math.random() * numbers.length);
+                result.push(numbers[index]);
+                numbers.splice(index, 1); // 刪除選過的數字
+            }
+
+            return result.join("");
+        }
+
+
+        // 玩家輸入
+        function play() {
+            let inputField = document.getElementById("guessInput");
+            let guess = inputField.value;
+
+            if (!isValid(guess)) {
+                alert("Invalid input! Please enter 4 “unique“ digits.");
+                inputField.value = "";
+                return;
+            }
+
+            count++;
+
+            let result = checkAB(guess, answer);
+
+            let record = document.getElementById("record");
+            record.innerHTML += `第${count}次：${guess} → ${result}<br>`;
+
+            if (result === "4A0B") {
+                alert("Congratulations! You got the correct answer!\nTotal attempts: " + count);
+            }
+
+            inputField.value = "";
+        }
+
+        
+        function isValid(str) {
+            
+            if (str.length !== 4) {
+            	return false;
+            }
+
+            if (isNaN(str)) {
+            	return false;
+            }
+
+            //判斷有無重複num
+            let set = new Set(str);
+            if (set.size !== 4) {
+            	return false;
+            }
+
+            return true;
+        }
+
+        
+        function checkAB(guess, ans) {
+            let A = 0;
+            let B = 0;
+
+            let guessArray = guess.split("");
+            let ansArray = ans.split("");
+
+            for (let i = 0; i < 4; i++) {
+                if (guessArray[i] === ansArray[i]) {
+                    A++;
+                } else if (ansArray.includes(guessArray[i])) {
+                    B++;
+                }
+            }
+            return `${A}A${B}B`;
+        }
+    </script>
+
+
+</body>
+</html>
