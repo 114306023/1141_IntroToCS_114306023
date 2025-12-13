@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.calculator {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 350px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: black;
+  text-align: center;
+}
+
+label {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+#addBtn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 15px;
+  background: saddlebrown;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.result {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+
+}
